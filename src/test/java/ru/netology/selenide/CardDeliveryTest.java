@@ -24,7 +24,7 @@ public class CardDeliveryTest {
         SelenideElement form = $("[method=post]");
        form.$("[data-test-id=city] input").setValue("Саратов");
         form.$("[data-test-id=date] input").click();
-        form.$("[data-test-id=date] input").sendKeys("keys.DELETE");
+        form.$("[data-test-id=date] input").sendKeys("Keys.DELETE");
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_MONTH, 3);
         form.$("[data-test-id=date] input").setValue(new SimpleDateFormat("dd.MM.yyyy").format(calendar.getTime()));
