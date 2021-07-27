@@ -6,13 +6,17 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import java.text.SimpleDateFormat;
+import java.time.Clock;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryTest {
+
+
 
     @BeforeEach
     public void setUp() {
@@ -23,7 +27,7 @@ public class CardDeliveryTest {
     public void shouldCheckRequest() {
         SelenideElement form = $("[method=post]");
        form.$("[data-test-id=city] input").setValue("Саратов");
-        form.$("[data-test-id=date] input").click();
+        form.$("[data-test-id=date] input").doubleClick();
         form.$("[data-test-id=date] input").sendKeys("Keys.DELETE");
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_MONTH, 3);
